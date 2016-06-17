@@ -2,7 +2,7 @@
 
 module.exports = {
 	app: {
-		title: 'first_step_to_mean',
+		title: 'Learning Mean from Scratch',
 		description: 'testing and learning applicaiton to get familiarize with mean',
 		keywords: 'Learning, Step by Step approach, MongoDB, Express, Angular Js, Node.Js'
 	},
