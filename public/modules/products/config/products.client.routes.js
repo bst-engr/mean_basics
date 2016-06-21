@@ -6,7 +6,7 @@ angular.module('products').config(['$stateProvider',
 		// Products state routing
 		$stateProvider.
 		state('view-product', {
-			url: '/products/view/:productId',
+			url: '/products/:productId/view',
 			templateUrl: 'modules/products/views/view-product.client.view.html'
 		}).
 		state('edit-product', {

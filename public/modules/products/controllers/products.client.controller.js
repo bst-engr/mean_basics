@@ -19,12 +19,15 @@ angular.module('products')
 				// Create new Product object
 				var product = new Products ({
 					name: this.name,
-					description: this.description
+					description: this.description,
+					unit_price: this.unit_price,
+					stock: this.stock,
+					category_id: this.category_id,
 				});
 
 				// Redirect after save
 				product.$save(function(response) {
-					$location.path('products/' + response._id);
+					$location.path('products/view/' + response._id);
 
 					// Clear form fields
 					$scope.name = '';

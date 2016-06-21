@@ -13,14 +13,13 @@ var mongoose = require('mongoose'),
  */
 exports.create = function(req, res) {
 	var product = new Product(req.body);
-
-	Product.save(function(err) {
+	product.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.status(201).json(Product);
+			res.status(201).json(product);
 		}
 	});
 };
