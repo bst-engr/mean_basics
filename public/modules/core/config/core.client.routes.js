@@ -12,6 +12,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		state('home', {
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html'
+		})
+		.state('product-by-category', {
+			url: '/:categoryId/category',
+			templateUrl: 'modules/core/views/products.client.view.html'
+		})
+		.state('products-view', {
+			url: '/:productId/view',
+			templateUrl: 'modules/core/views/view-product.client.view.html'	
 		});
 	}
 ]);

@@ -14,10 +14,12 @@ module.exports = function(app) {
 		.put(users.requiresLogin, products.update)
         .delete(users.requiresLogin, products.delete);
 
+    app.route('/products/:category_id/category').get(products.readCategory);
 	// Finish by binding the article middleware
 	// What's this? Where the categoryId is present in the URL
 	// the logic to 'get by id' is handled by this single function
 	// and added to the request object i.e. request.category.
 	app.param('productId', products.productByID);
+	app.param('category_id', products.productByCategory);
 
 };

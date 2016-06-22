@@ -22,7 +22,10 @@
                 <div class="form-group">
                     <label class="control-label" for="name">Category</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="product_category_id" id="category_id" class="form-control" placeholder="Category Id" required>
+                        <select  data-ng-model="product.category_id" id="category_id" class="form-control" placeholder="Category Id" required>
+                            <option data-ng-repeat="category in categories" value="{{category._id}}" data-ng-selected="category._id==product.category_id">{{category.name}}</option>
+                        </select>
+                        <!-- <input type="text" data-ng-model="category_id" id="category_id" class="form-control" placeholder="Category Id" required> -->
                     </div>
                 </div>
 

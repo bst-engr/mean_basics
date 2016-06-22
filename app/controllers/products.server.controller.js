@@ -104,3 +104,28 @@ exports.productByID = function(req, res, next, id) {
 		next();
 	});
 };
+
+exports.readCategory = function(req, res) {
+	res.json(req.products);
+};
+
+exports.productByCategory = function (req, res, next, id) {
+	
+	if (!mongoose.Types.ObjectId.isValid(id)) {
+		return res.status(400).send({
+			message: 'Category is invalid'
+		});
+	}
+
+	Product.find().where('category_id', id).exec(function(err, products) {
+
+		if (err) return next(err);
+		if (!products) {
+			return res.status(404).send({
+  				message: 'Product not found'
+  			});
+		}
+		req.products = products;
+		next();
+	});
+};

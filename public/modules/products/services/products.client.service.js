@@ -10,3 +10,13 @@ angular.module('products').factory('Products', ['$resource',
 		});
 	}
 ]);
+angular.module('products').factory('ProductsByCategory', ['$resource',
+	function($resource) {
+		return $resource('products/:categoryId/category', { productId: '@_id'
+		}, {
+			update: {
+				method: 'PUT'
+			}
+		});
+	}
+]);

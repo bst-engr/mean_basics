@@ -1,4 +1,4 @@
-<section data-ng-controller="ProductsController">
+<section data-ng-controller="ProductsController" data-ng-init="getCategories()">
 	<div class="page-header">
         <h1>New Product</h1>
     </div>
@@ -22,7 +22,10 @@
                 <div class="form-group">
                     <label class="control-label" for="name">Category</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="category_id" id="category_id" class="form-control" placeholder="Category Id" required>
+                        <select  data-ng-model="category_id" id="category_id" class="form-control" placeholder="Category Id" required>
+                            <option ng-repeat="category in categories" value="{{category._id}}">{{category.name}}</option>
+                        </select>
+                        <!-- <input type="text" data-ng-model="category_id" id="category_id" class="form-control" placeholder="Category Id" required> -->
                     </div>
                 </div>
 

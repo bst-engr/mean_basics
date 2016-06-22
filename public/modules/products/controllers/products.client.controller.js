@@ -2,8 +2,8 @@
 
 // Products controller
 angular.module('products')
-	.controller('ProductsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Products',
-		function($scope, $stateParams, $location, Authentication, Products) {
+	.controller('ProductsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Products', 'Categories',
+		function($scope, $stateParams, $location, Authentication, Products, Categories) {
 			$scope.authentication = Authentication;
 		  	$scope.currentPage = 1;
 		  	$scope.pageSize = 10;
@@ -71,6 +71,7 @@ angular.module('products')
 
 			// Find existing Product
 			$scope.findOne = function() {
+				this.getCategories();
 				$scope.product = Products.get({ 
 					productId: $stateParams.productId
 				});
@@ -80,5 +81,10 @@ angular.module('products')
 			$scope.productSearch = function(product) {
 				$location.path('products/' + product._id);
 			};
+
+			//fetch Categories
+			$scope.getCategories = function () {
+				$scope.categories = Categories.query(); 
+			}
 		}
 ]);
