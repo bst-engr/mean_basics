@@ -11,6 +11,7 @@
         <a data-ng-repeat="product in products | limitTo: offset - products.length | limitTo: pageSize" data-ng-href="#!/{{product._id}}/view" class="list-group-item">
             <h4 class="list-group-item-heading" data-ng-bind="product.name"></h4>
             <span data-ng-bind="product.description"></span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true" data-ng-click="addToCart(product._id);" ></span>
         </a>
     </div>
     <!-- this is the paging control -->

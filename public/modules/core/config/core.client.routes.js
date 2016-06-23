@@ -20,6 +20,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		.state('products-view', {
 			url: '/:productId/view',
 			templateUrl: 'modules/core/views/view-product.client.view.html'	
+		})
+		.state('view-cart', {
+			url: '/cart',
+			templateUrl: 'modules/core/views/cart.client.view.html'
 		});
 	}
 ]);

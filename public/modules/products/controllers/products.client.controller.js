@@ -85,6 +85,7 @@ angular.module('products')
 			//fetch Categories
 			$scope.getCategories = function () {
 				$scope.categories = Categories.query(); 
-			}
+			};
+
 		}
 ]);

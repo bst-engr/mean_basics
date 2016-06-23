@@ -32,6 +32,7 @@
 		            <h4 class="list-group-item-heading" data-ng-bind="product.name"></h4>
 		            <span data-ng-bind="product.description"></span>
 		        </a>
+		        
 		    </div>
 		    <!-- this is the paging control -->
 		    <pagination total-items="products.length" ng-model="currentPage" ng-change="pageChanged()" max-size="pageSize" ng-show="products.length > pageSize"></pagination>
